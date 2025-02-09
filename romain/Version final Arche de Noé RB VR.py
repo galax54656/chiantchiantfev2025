@@ -10,40 +10,40 @@ pygame.init()  # intialise les fonctions de pygame
 screen = pygame.display.set_mode((1280, 720))  # initialise la fenêtre ainsi que sa taille(X,Y)
 
 # load image
-fond_menu = pygame.image.load('loader/mer.PNG')  # charge une image(pas obligée .png
+fond_menu = pygame.image.load('images/mer.PNG')  # charge une image(pas obligée .png
 fond_menu = fond_menu.convert()  # la convertie dans le bon format de pixel
 fond_menu = pygame.transform.scale(fond_menu, (1280, 720))  # chage sa taille
 
-fond_bouton = pygame.image.load('loader/FOND BOUTON.png')
+fond_bouton = pygame.image.load('images/FOND BOUTON.png')
 fond_bouton = fond_bouton.convert()
 
-fond_bouton2 = pygame.image.load('loader/fond_bouton2.png')  # bouton orange+rouge
+fond_bouton2 = pygame.image.load('images/fond_bouton2.png')  # bouton orange+rouge
 fond_bouton2 = fond_bouton2.convert()
 
-fond_bouton3 = pygame.image.load('loader/FOND BOUTON2.png')  # bouton marron
+fond_bouton3 = pygame.image.load('images/FOND BOUTON2.png')  # bouton marron
 fond_bouton3 = fond_bouton3.convert()
 
-fond_bouton4 = pygame.image.load('loader/FOND BOUTON3.jpg')  # bouton marron+rouge
+fond_bouton4 = pygame.image.load('images/FOND BOUTON3.jpg')  # bouton marron+rouge
 fond_bouton4 = fond_bouton4.convert()
 
-music_plus_button_image = pygame.image.load('loader/plus-removebg-preview.png').convert_alpha()
+music_plus_button_image = pygame.image.load('images/plus-removebg-preview.png').convert_alpha()
 
-music_moins_button_image = pygame.image.load('loader/moins-removebg-preview.png').convert_alpha()
+music_moins_button_image = pygame.image.load('images/moins-removebg-preview.png').convert_alpha()
 
 music_on_button_image = pygame.image.load(
-    'loader/soundOnBtn.png').convert_alpha()  # charge et convertie une image et permet une sorte de transparence(mieux pour image non rectangle)
+    'images/soundOnBtn.png').convert_alpha()  # charge et convertie une image et permet une sorte de transparence(mieux pour image non rectangle)
 
-music_off_button_image = pygame.image.load('loader/soundOffBtn.png').convert_alpha()
+music_off_button_image = pygame.image.load('images/soundOffBtn.png').convert_alpha()
 
-option_back = pygame.image.load('loader/bois option.jpg').convert_alpha()
-option_jeu_back = pygame.image.load('loader/back_for_option_jeu.png').convert_alpha()
+option_back = pygame.image.load('images/bois option.jpg').convert_alpha()
+option_jeu_back = pygame.image.load('images/back_for_option_jeu.png').convert_alpha()
 
-option_jeu_button_image = pygame.image.load('loader/option_jeu.png').convert_alpha()
+option_jeu_button_image = pygame.image.load('images/option_jeu.png').convert_alpha()
 option_jeu_button_image = pygame.transform.scale(option_jeu_button_image, (100, 80))  # change sa taille  X, Y
 
-quit_button_image = pygame.image.load('loader/quit.png').convert_alpha()
+quit_button_image = pygame.image.load('images/quit.png').convert_alpha()
 
-fond_jeu = pygame.image.load('loader/grim.png')  # charge une image(pas obligée .png
+fond_jeu = pygame.image.load('images/grim.png')  # charge une image(pas obligée .png
 fond_jeu = fond_jeu.convert()  # la convertie dans une version meilleur pour pygame
 fond_jeu = pygame.transform.scale(fond_jeu, (1280, 720))  # chage sa taille
 
@@ -57,16 +57,16 @@ option_jeu_back = pygame.transform.scale(option_jeu_back, (1100, 600))
 quit_button_image = pygame.transform.scale(quit_button_image, (180, 110))
 
 # load music
-pygame.mixer.music.load('loader/Le_Donjon_Qutan.mp3')  # charge une piste audio(pas obligée le .wav)
+pygame.mixer.music.load('images/Le_Donjon_Qutan.mp3')  # charge une piste audio(pas obligée le .wav)
 gameplay_music = pygame.mixer.music.play(-1, 0.0,
                                          5000)  # lance la musique, -1=loop infini, 0.0 moment du debut de la musique,5000=5seconde de fade pour lancer la musique en douceur
 volume = 0.3# max = 1
 pygame.mixer.music.set_volume(volume)  # set volume to 30%
 
 #load les sound effects
-win_sound = pygame.mixer.Sound('loader/you won audio.mp3')
+win_sound = pygame.mixer.Sound('images/you won audio.mp3')
 win_sound.set_volume(0.3)
-max_sound = pygame.mixer.Sound('loader/Metal_Gear_Solid_Alert__.mp3')
+max_sound = pygame.mixer.Sound('images/Metal_Gear_Solid_Alert__.mp3')
 max_sound.set_volume((0.2))
 
 #initialise les listes
@@ -334,34 +334,34 @@ def jeu():
     moment_appuie = 0
     niv
     #utilisation de la classe Image
-    zebre1 = Image(nom="zebre1", image="loader/zebre.png", taille=(84, 210), position_debut=n.niveau["position_zebre1"],
+    zebre1 = Image(nom="zebre1", image="images/zebre.png", taille=(84, 210), position_debut=n.niveau["position_zebre1"],
                    type="simple", bougeable=n.niveau["boug_zebre1"])
-    zebre2 = Image(nom="zebre2", image="loader/zebre2.png", taille=(168, 105),
+    zebre2 = Image(nom="zebre2", image="images/zebre2.png", taille=(168, 105),
                    position_debut=n.niveau["position_zebre2"],
                    type="simple", bougeable=n.niveau["boug_zebre2"])
-    hippopotame1 = Image(nom="hippopotame1", image="loader/hippopotame.png", taille=(252, 105),
+    hippopotame1 = Image(nom="hippopotame1", image="images/hippopotame.png", taille=(252, 105),
                          position_debut=n.niveau["position_hippopotame1"],
                          type="simple", bougeable=n.niveau["boug_hippopotame1"])
-    hippopotame2 = Image(nom="hippopotame2", image="loader/hippopotame2.png", taille=(168, 105),
+    hippopotame2 = Image(nom="hippopotame2", image="images/hippopotame2.png", taille=(168, 105),
                          position_debut=n.niveau["position_hippopotame2"],
                          type="simple", bougeable=n.niveau["boug_hippopotame2"])
-    lion1 = Image(nom="lion1", image="loader/lion.png", taille=(168, 105), position_debut=n.niveau["position_lion1"],
+    lion1 = Image(nom="lion1", image="images/lion.png", taille=(168, 105), position_debut=n.niveau["position_lion1"],
                   type="simple", bougeable=n.niveau["boug_lion1"])
-    elephant1 = Image(nom="elephant1", image="loader/elephant.png", taille=(168, 105),
+    elephant1 = Image(nom="elephant1", image="images/elephant.png", taille=(168, 105),
                       position_debut=n.niveau["position_elephant1"],
                       type="simple", bougeable=n.niveau["boug_elephant1"])
-    girafe1 = Image(nom="girafe1", image="loader/girafe2.png", taille=(84, 210),
+    girafe1 = Image(nom="girafe1", image="images/girafe2.png", taille=(84, 210),
                     position_debut=n.niveau["position_girafe1"],
                     type="simple", bougeable=n.niveau["boug_girafe1"])
-    elephant2 = Image(nom="elephant2", image="loader/elephantdt.png", image2="loader/elephantg.png", taille=(84, 105),
+    elephant2 = Image(nom="elephant2", image="images/elephantdt.png", image2="images/elephantg.png", taille=(84, 105),
                       taille2=(84, 210),
                       position_debut=n.niveau["position_elephant2d"], position_debut2=n.niveau["position_elephant2g"],
                       type="el", bougeable=n.niveau["boug_elephant2"])
-    girafe2 = Image(nom="girafe2", image="loader/girafedtest.png", image2="loader/girafegt.png", taille=(84, 210),
+    girafe2 = Image(nom="girafe2", image="images/girafedtest.png", image2="images/girafegt.png", taille=(84, 210),
                     taille2=(84, 105),
                     position_debut=n.niveau["position_girafe2d"], position_debut2=n.niveau["position_girafe2g"],
                     type="el", bougeable=n.niveau["boug_girafe2"])
-    lion2 = Image(nom="lion2", image="loader/lionnedt.png", image2="loader/lionnegtest.png", taille=(84, 105),
+    lion2 = Image(nom="lion2", image="images/lionnedt.png", image2="images/lionnegtest.png", taille=(84, 105),
                   taille2=(84, 210),
                   position_debut=n.niveau["position_lion2d"], position_debut2=n.niveau["position_lion2g"],
                   type="el", bougeable=n.niveau["boug_lion2"])
@@ -680,9 +680,9 @@ def jeu():
                          text_input="HOME", font=pygame.font.Font(None, 48), base_color="White",
                          hovering_color="White", image_scale=[180, 70], hov_image=fond_bouton4)
     #victoire
-    fondvictoire = pygame.image.load("loader/gagner.png").convert_alpha()
-    homebtn = pygame.image.load("loader/homebtn.png").convert_alpha()
-    backarrow = pygame.image.load("loader/backarrow.png").convert_alpha()
+    fondvictoire = pygame.image.load("images/gagner.png").convert_alpha()
+    homebtn = pygame.image.load("images/homebtn.png").convert_alpha()
+    backarrow = pygame.image.load("images/backarrow.png").convert_alpha()
     backarrowbtn = Button(image=backarrow, pos=(700, 430), text_input="", font=pygame.font.Font(None, 75),
                           base_color="White", hovering_color="Red", image_scale=[80, 80])
     homebtnn = Button(image=homebtn, pos=(550, 430), text_input="", font=pygame.font.Font(None, 75), base_color="White",

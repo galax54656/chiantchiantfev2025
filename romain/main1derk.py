@@ -9,65 +9,65 @@ mixer.init()  # initialise les fonctions pour la musique
 pygame.init()  # intialise les fonctions de pygame
 screen = pygame.display.set_mode((1280, 720))  # initialise la fenêtre ainsi que sa taille(X,Y)
 
-# load image
-fond_menu = pygame.image.load('loader/im2mainmenudekal.jpg')  # charge une image(pas obligée .png
+# load images
+fond_menu = pygame.image.load('images/im2mainmenudekal.jpg')  # charge une image(pas obligée .png)
 fond_menu = fond_menu.convert()  # la convertie dans le bon format de pixel
-fond_menu = pygame.transform.scale(fond_menu, (1280, 720))  # chage sa taille
+fond_menu = pygame.transform.scale(fond_menu, (1280, 720))  # change sa taille
 
-fond_bouton = pygame.image.load('loader/FOND BOUTON.png')
+fond_bouton = pygame.image.load('images/FOND BOUTON.png')
 fond_bouton = fond_bouton.convert()
 
-fond_bouton2 = pygame.image.load('loader/fond_bouton2.png')  # bouton orange+rouge
+fond_bouton2 = pygame.image.load('images/fond_bouton2.png')  # bouton orange+rouge
 fond_bouton2 = fond_bouton2.convert()
 
-fond_bouton3 = pygame.image.load('loader/FOND BOUTON2.png')  # bouton marron
+fond_bouton3 = pygame.image.load('images/FOND BOUTON2.png')  # bouton marron
 fond_bouton3 = fond_bouton3.convert()
 
-fond_bouton4 = pygame.image.load('loader/FOND BOUTON3.jpg')  # bouton marron+rouge
+fond_bouton4 = pygame.image.load('images/FOND BOUTON3.jpg')  # bouton marron+rouge
 fond_bouton4 = fond_bouton4.convert()
 
-music_plus_button_image = pygame.image.load('loader/plus-removebg-preview.png').convert_alpha()
+music_plus_button_image = pygame.image.load('images/plus-removebg-preview.png').convert_alpha()
 
-music_moins_button_image = pygame.image.load('loader/moins-removebg-preview.png').convert_alpha()
+music_moins_button_image = pygame.image.load('images/moins-removebg-preview.png').convert_alpha()
 
 music_on_button_image = pygame.image.load(
-    'loader/soundOnBtn.png').convert_alpha()  # charge et convertie une image et permet une sorte de transparence(mieux pour image non rectangle)
+    'images/soundOnBtn.png').convert_alpha()  # charge et convertie une image et permet une sorte de transparence(mieux pour image non rectangle)
 
-music_off_button_image = pygame.image.load('loader/soundOffBtn.png').convert_alpha()
+music_off_button_image = pygame.image.load('images/soundOffBtn.png').convert_alpha()
 
-option_back = pygame.image.load('loader/écranoption.png').convert_alpha()
-option_jeu_back = pygame.image.load('loader/back_for_option_jeu.png').convert_alpha()
+option_back = pygame.image.load('images/écranoption.png').convert_alpha()
+option_jeu_back = pygame.image.load('images/back_for_option_jeu.png').convert_alpha()
 
-option_jeu_button_image = pygame.image.load('loader/option_jeu.png').convert_alpha()
+option_jeu_button_image = pygame.image.load('images/option_jeu.png').convert_alpha()
 option_jeu_button_image = pygame.transform.scale(option_jeu_button_image, (100, 80))  # change sa taille  X, Y
 
-quit_button_image = pygame.image.load('loader/plus-removebg-preview.png').convert_alpha()
+quit_button_image = pygame.image.load('images/croixbienbien.png').convert_alpha()
 
-fond_jeu = pygame.image.load('loader/grim.png')  # charge une image(pas obligée .png
+fond_jeu = pygame.image.load('images/grim.png')  # charge une image(pas obligée .png
 fond_jeu = fond_jeu.convert()  # la convertie dans une version meilleur pour pygame
 fond_jeu = pygame.transform.scale(fond_jeu, (1280, 720))  # chage sa taille
 
 # Scale images(change la taille des images)
 music_plus_button_image = pygame.transform.scale(music_plus_button_image, (60, 60))
 music_moins_button_image = pygame.transform.scale(music_moins_button_image, (80, 80))
-music_on_button_image = pygame.transform.scale(music_on_button_image, (200, 80))
-music_off_button_image = pygame.transform.scale(music_off_button_image, (200, 80))
+music_on_button_image = pygame.transform.scale(music_on_button_image, (150, 60))
+music_off_button_image = pygame.transform.scale(music_off_button_image, (150, 60))
 option_back = pygame.transform.scale(option_back, (370, 570))
 option_jeu_back = pygame.transform.scale(option_jeu_back, (1100, 600))
-quit_button_image = pygame.transform.scale(quit_button_image, (180, 110))
-quit_button_image = pygame.transform.rotate(quit_button_image,45)
+quit_button_image = pygame.transform.scale(quit_button_image, (90, 90))
+#quit_button_image = pygame.transform.rotate(quit_button_image,45)
 
 # load music
-pygame.mixer.music.load('loader/Le_Donjon_Qutan.mp3')  # charge une piste audio(pas obligée le .wav)
+pygame.mixer.music.load('images/Le_Donjon_Qutan.mp3')  # charge une piste audio(pas obligée le .wav)
 gameplay_music = pygame.mixer.music.play(-1, 0.0,
                                          5000)  # lance la musique, -1=loop infini, 0.0 moment du debut de la musique,5000=5seconde de fade pour lancer la musique en douceur
 volume = 0.3# max = 1
 pygame.mixer.music.set_volume(volume)  # set volume to 30%
 
 #load les sound effects
-win_sound = pygame.mixer.Sound('loader/you won audio.mp3')
+win_sound = pygame.mixer.Sound('images/you won audio.mp3')
 win_sound.set_volume(0.3)
-max_sound = pygame.mixer.Sound('loader/Metal_Gear_Solid_Alert__.mp3')
+max_sound = pygame.mixer.Sound('images/Metal_Gear_Solid_Alert__.mp3')
 max_sound.set_volume((0.2))
 
 #initialise les listes
@@ -324,12 +324,13 @@ def option():
 
     menu_mouse_pos = pygame.mouse.get_pos()
     quit_button = Button2(image=quit_button_image, pos=(780, 65), hovering_image=quit_button_image)
-    music_plus_button = Button2(image=music_plus_button_image, pos=(820, 470), hovering_image=music_plus_button_image)
-    music_moins_button = Button2(image=music_moins_button_image, pos=(440, 467),
+    music_plus_button = Button2(image=music_plus_button_image, pos=(785, 410), hovering_image=music_plus_button_image)
+    music_moins_button = Button2(image=music_moins_button_image, pos=(480, 407),
                                  hovering_image=music_moins_button_image)
-    music_button = Button2(image=music_on_button_image, pos=(750, 315), hovering_image=music_off_button_image)
-    sound_text = Text(pos=(430, 287), text_input='Music :', font=pygame.font.Font(None, 75), base_color='White')
-    volume_text = Text(pos=(430, 380), text_input='Volume :', font=pygame.font.Font(None, 75), base_color='White')
+    music_button = Button2(image=music_on_button_image, pos=(720, 220), hovering_image=music_off_button_image)
+    option_text = Text(pos=(485, 70), text_input='OPTION', font=pygame.font.Font(None, 75), base_color='White')
+    sound_text = Text(pos=(470, 200), text_input='Music :', font=pygame.font.Font(None, 60), base_color='White')
+    volume_text = Text(pos=(460, 320), text_input='Volume :', font=pygame.font.Font(None, 60), base_color='White')
     if music == 'off':
         music_button.image = music_off_button_image
 
@@ -353,17 +354,18 @@ def option():
 
         # Create and render the button
         quit_button.update2(screen)
+        option_text.update3(screen)
         sound_text.update3(screen)
         volume_text.update3(screen)
         music_button.update2(screen)
         music_plus_button.update2(screen)
         music_moins_button.update2(screen)
-        pygame.draw.rect(screen, WHITE, (480, 440, 300, 60), width=5, border_radius=20)
-        volume_bar_width = int(300 * volume)  # Calculate the width of the volume bar based on the volume level
-        if volume_bar_width == 300:
-            pygame.draw.rect(screen, WHITE, (480, 440, volume_bar_width, 60), border_radius=20)
+        pygame.draw.rect(screen, WHITE, (515, 380, 235, 60), width=5, border_radius=20)#480, 420, 300 , 60
+        volume_bar_width = int(235 * volume)  # Calculate the width of the volume bar based on the volume level
+        if volume_bar_width == 235:
+            pygame.draw.rect(screen, WHITE, (516, 380, volume_bar_width, 60), border_radius=20)
         else:
-            pygame.draw.rect(screen, WHITE, (480, 440, volume_bar_width, 60), border_top_left_radius=20,
+            pygame.draw.rect(screen, WHITE, (513, 380, volume_bar_width, 60), border_top_left_radius=20,
                              border_bottom_left_radius=20)
 
         clock.tick(FPS)
@@ -384,8 +386,8 @@ def main_menu():  # menu principale
 
         # crée le bouton select
         select_button = Button(image=fond_bouton, pos=(640, 240-20),
-                               text_input="SELECT", font=pygame.font.Font(None, 75), base_color="White",
-                               hovering_color="Red", image_scale=[250, 100], hov_image=fond_bouton2)
+                               text_input="GAME MODE", font=pygame.font.Font(None, 75), base_color="White",
+                               hovering_color="Red", image_scale=[380, 100], hov_image=fond_bouton2)
 
         options_button = Button(image=fond_bouton, pos=(640, 365-20),
                                 text_input="OPTIONS", font=pygame.font.Font(None, 75), base_color="White",
