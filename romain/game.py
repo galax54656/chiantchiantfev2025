@@ -10,7 +10,7 @@ card_face_img = pygame.image.load('images/avantvraicarterouge.png').convert()
 
 
 class Card:
-    def __init__(self, position=(200, 200), scale=(100, 150)):
+    def __init__(self, position=(50, 50), scale=(50, 70)):
         self.value = random.randint(1, 10)
         self.position = position
         self.state = 'back'  # 'back' = face cachée, 'face' = face visible

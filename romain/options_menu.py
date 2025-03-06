@@ -22,11 +22,11 @@ quit_img = pygame.transform.scale(quit_img, (90, 90))
 
 # Variables globales pour l'état de la musique et le volume
 music_state = "on"
-volume = 0.3
+volume = 0
 
 
 # Classe simple pour les boutons utilisant uniquement une image
-class Button2:
+class Bouton_simple:
     def __init__(self, image, pos):
         self.image = image
         self.rect = self.image.get_rect(center=pos)
@@ -34,7 +34,7 @@ class Button2:
     def draw(self, screen):
         screen.blit(self.image, self.rect)
 
-    def is_hovered(self, pos):
+    def au_dessus(self, pos):
         return self.rect.collidepoint(pos)
 
 
@@ -45,14 +45,14 @@ def options_menu(screen):
     small_font = pygame.font.Font(None, 60)
 
     # Bouton pour revenir au menu principal
-    quit_button = Button2(quit_img, (780, 65))
+    quit_button = Bouton_simple(quit_img, (780, 65))
 
     # Bouton pour activer/désactiver la musique
-    music_button = Button2(music_on_img if music_state == "on" else music_off_img, (720, 220))
+    music_button = Bouton_simple(music_on_img if music_state == "on" else music_off_img, (720, 220))
 
     # Boutons pour augmenter ou diminuer le volume
-    plus_button = Button2(volume_plus_img, (785, 410))
-    minus_button = Button2(volume_minus_img, (480, 407))
+    plus_button = Bouton_simple(volume_plus_img, (785, 410))
+    minus_button = Bouton_simple(volume_minus_img, (480, 407))
 
     running = True
     while running:
@@ -64,9 +64,9 @@ def options_menu(screen):
             if event.type == pygame.QUIT:
                 return "quit"
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if quit_button.is_hovered(mouse_pos):
+                if quit_button.au_dessus(mouse_pos):
                     return "main_menu"
-                if music_button.rect.collidepoint(mouse_pos):
+                if music_button.au_dessus(mouse_pos):
                     # Bascule de l'état de la musique
                     if music_state == "on":
                         pygame.mixer.music.pause()
