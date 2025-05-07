@@ -10,40 +10,40 @@ pygame.init()  # intialise les fonctions de pygame
 screen = pygame.display.set_mode((1280, 720))  # initialise la fenêtre ainsi que sa taille(X,Y)
 
 # load image
-fond_menu = pygame.image.load('images/mer.PNG')  # charge une image(pas obligée .png
+fond_menu = pygame.image.load('../images/mer.PNG')  # charge une image(pas obligée .png
 fond_menu = fond_menu.convert()  # la convertie dans le bon format de pixel
 fond_menu = pygame.transform.scale(fond_menu, (1280, 720))  # chage sa taille
 
-fond_bouton = pygame.image.load('images/FOND BOUTON.png')
+fond_bouton = pygame.image.load('../images/FOND BOUTON.png')
 fond_bouton = fond_bouton.convert()
 
-fond_bouton2 = pygame.image.load('images/fond_bouton2.png')  # bouton orange+rouge
+fond_bouton2 = pygame.image.load('../images/fond_bouton2.png')  # bouton orange+rouge
 fond_bouton2 = fond_bouton2.convert()
 
-fond_bouton3 = pygame.image.load('images/FOND BOUTON2.png')  # bouton marron
+fond_bouton3 = pygame.image.load('../images/FOND BOUTON2.png')  # bouton marron
 fond_bouton3 = fond_bouton3.convert()
 
-fond_bouton4 = pygame.image.load('images/FOND BOUTON3.jpg')  # bouton marron+rouge
+fond_bouton4 = pygame.image.load('../images/FOND BOUTON3.jpg')  # bouton marron+rouge
 fond_bouton4 = fond_bouton4.convert()
 
-music_plus_button_image = pygame.image.load('images/plus-removebg-preview.png').convert_alpha()
+music_plus_button_image = pygame.image.load('../images/plus-removebg-preview.png').convert_alpha()
 
-music_moins_button_image = pygame.image.load('images/moins-removebg-preview.png').convert_alpha()
+music_moins_button_image = pygame.image.load('../images/moins-removebg-preview.png').convert_alpha()
 
 music_on_button_image = pygame.image.load(
-    'images/soundOnBtn.png').convert_alpha()  # charge et convertie une image et permet une sorte de transparence(mieux pour image non rectangle)
+    '../images/soundOnBtn.png').convert_alpha()  # charge et convertie une image et permet une sorte de transparence(mieux pour image non rectangle)
 
-music_off_button_image = pygame.image.load('images/soundOffBtn.png').convert_alpha()
+music_off_button_image = pygame.image.load('../images/soundOffBtn.png').convert_alpha()
 
-option_back = pygame.image.load('images/bois option.jpg').convert_alpha()
-option_jeu_back = pygame.image.load('images/back_for_option_jeu.png').convert_alpha()
+option_back = pygame.image.load('../images/bois option.jpg').convert_alpha()
+option_jeu_back = pygame.image.load('../images/back_for_option_jeu.png').convert_alpha()
 
-option_jeu_button_image = pygame.image.load('images/option_jeu.png').convert_alpha()
+option_jeu_button_image = pygame.image.load('../images/option_jeu.png').convert_alpha()
 option_jeu_button_image = pygame.transform.scale(option_jeu_button_image, (100, 80))  # change sa taille  X, Y
 
-quit_button_image = pygame.image.load('images/quit.png').convert_alpha()
+quit_button_image = pygame.image.load('../images/quit.png').convert_alpha()
 
-fond_jeu = pygame.image.load('images/grim.png')  # charge une image(pas obligée .png
+fond_jeu = pygame.image.load('../images/grim.png')  # charge une image(pas obligée .png
 fond_jeu = fond_jeu.convert()  # la convertie dans une version meilleur pour pygame
 fond_jeu = pygame.transform.scale(fond_jeu, (1280, 720))  # chage sa taille
 
@@ -57,16 +57,16 @@ option_jeu_back = pygame.transform.scale(option_jeu_back, (1100, 600))
 quit_button_image = pygame.transform.scale(quit_button_image, (180, 110))
 
 # load music
-pygame.mixer.music.load('images/Le_Donjon_Qutan.mp3')  # charge une piste audio(pas obligée le .wav)
+pygame.mixer.music.load('../images/Le_Donjon_Qutan.mp3')  # charge une piste audio(pas obligée le .wav)
 gameplay_music = pygame.mixer.music.play(-1, 0.0,
                                          5000)  # lance la musique, -1=loop infini, 0.0 moment du debut de la musique,5000=5seconde de fade pour lancer la musique en douceur
 volume = 0.3# max = 1
 pygame.mixer.music.set_volume(volume)  # set volume to 30%
 
 #load les sound effects
-win_sound = pygame.mixer.Sound('images/you won audio.mp3')
+win_sound = pygame.mixer.Sound('../images/you won audio.mp3')
 win_sound.set_volume(0.3)
-max_sound = pygame.mixer.Sound('images/Metal_Gear_Solid_Alert__.mp3')
+max_sound = pygame.mixer.Sound('../images/Metal_Gear_Solid_Alert__.mp3')
 max_sound.set_volume((0.2))
 
 #initialise les listes
@@ -680,9 +680,9 @@ def jeu():
                          text_input="HOME", font=pygame.font.Font(None, 48), base_color="White",
                          hovering_color="White", image_scale=[180, 70], hov_image=fond_bouton4)
     #victoire
-    fondvictoire = pygame.image.load("images/gagner.png").convert_alpha()
-    homebtn = pygame.image.load("images/homebtn.png").convert_alpha()
-    backarrow = pygame.image.load("images/backarrow.png").convert_alpha()
+    fondvictoire = pygame.image.load("../images/gagner.png").convert_alpha()
+    homebtn = pygame.image.load("../images/homeBtn.png").convert_alpha()
+    backarrow = pygame.image.load("../images/backarrow.png").convert_alpha()
     backarrowbtn = Button(image=backarrow, pos=(700, 430), text_input="", font=pygame.font.Font(None, 75),
                           base_color="White", hovering_color="Red", image_scale=[80, 80])
     homebtnn = Button(image=homebtn, pos=(550, 430), text_input="", font=pygame.font.Font(None, 75), base_color="White",
@@ -1462,7 +1462,7 @@ def jeu():
 
                                }
                         # charger données dans fichier
-                        with open('results.json', mode='a') as my_file:
+                        with open('../results.json', mode='a') as my_file:
                             json.dump(jeu, my_file)
                             my_file.write('\n')
                         main_menu()
@@ -1481,7 +1481,7 @@ def jeu():
                                "resolutionTime": timer_text
                                }
                         # charger données dans fichier
-                        with open('results.json', mode='a') as my_file:
+                        with open('../results.json', mode='a') as my_file:
                             json.dump(jeu, my_file)
                             my_file.write('\n')
                         menu_niveaux()

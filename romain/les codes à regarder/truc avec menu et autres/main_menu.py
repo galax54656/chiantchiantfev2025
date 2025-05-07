@@ -7,15 +7,15 @@ pygame.init()  # Initialise Pygame une seule fois
 screen = pygame.display.set_mode((1280, 720))  # Définissez la taille réelle de la fenêtre
 
 # Chargement et transformation des images
-background_img = pygame.image.load('images/im2mainmenudekal.jpg').convert()
+background_img = pygame.image.load('../../images/im2mainmenudekal.jpg').convert()
 background_img = pygame.transform.scale(background_img, (1280, 720))
 
-bouton_img = pygame.image.load('images/FOND BOUTON.png').convert_alpha()
+bouton_img = pygame.image.load('../../images/FOND BOUTON.png').convert_alpha()
 bouton_img = pygame.transform.scale(bouton_img, (380, 100))
-bouton_hover_img = pygame.image.load('images/fond_bouton2.png').convert_alpha()
+bouton_hover_img = pygame.image.load('../../images/fond_bouton2.png').convert_alpha()
 bouton_hover_img = pygame.transform.scale(bouton_hover_img, (380, 100))
 
-pygame.mixer.music.load('images/Le_Donjon_Qutan.mp3')  # charge une piste audio(pas obligée le .wav)
+pygame.mixer.music.load('../../images/Le_Donjon_Qutan.mp3')  # charge une piste audio(pas obligée le .wav)
 gameplay_music = pygame.mixer.music.play(-1, 0.0,
                                          5000)  # lance la musique, -1=loop infini, 0.0 moment du debut de la musique,5000=5seconde de fade pour lancer la musique en douceur
 volume = 0# max = 1

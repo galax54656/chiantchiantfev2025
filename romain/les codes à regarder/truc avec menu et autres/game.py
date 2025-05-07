@@ -3,10 +3,10 @@ import pygame
 import random
 
 # Chargement et transformation des images pour le jeu
-game_background = pygame.image.load("images/fonjeumtn.png").convert()
+game_background = pygame.image.load("../../images/fonjeumtn.png").convert()
 game_background = pygame.transform.scale(game_background, (1280, 720))
-card_back_img = pygame.image.load('images/tigre.webp').convert()
-card_face_img = pygame.image.load('images/avantvraicarterouge.png').convert()
+card_back_img = pygame.image.load('../../images/tigre.webp').convert()
+card_face_img = pygame.image.load('../../images/avantvraicarterouge.png').convert()
 
 
 class Card:

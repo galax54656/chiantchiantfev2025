@@ -2,22 +2,22 @@
 import pygame
 
 # Chargement et transformation des images pour le menu options
-background_img = pygame.image.load('images/im2mainmenudekal.jpg').convert()
+background_img = pygame.image.load('../../images/im2mainmenudekal.jpg').convert()
 background_img = pygame.transform.scale(background_img, (1280, 720))
-option_panel_img = pygame.image.load('images/écranoption.png').convert_alpha()
+option_panel_img = pygame.image.load('../../images/écranoption.png').convert_alpha()
 option_panel_img = pygame.transform.scale(option_panel_img, (370, 570))
 
-music_on_img = pygame.image.load('images/soundOnBtn.png').convert_alpha()
-music_off_img = pygame.image.load('images/soundOffBtn.png').convert_alpha()
+music_on_img = pygame.image.load('../../images/soundOnBtn.png').convert_alpha()
+music_off_img = pygame.image.load('../../images/soundOffBtn.png').convert_alpha()
 music_on_img = pygame.transform.scale(music_on_img, (150, 60))
 music_off_img = pygame.transform.scale(music_off_img, (150, 60))
 
-volume_plus_img = pygame.image.load('images/plus-removebg-preview.png').convert_alpha()
-volume_minus_img = pygame.image.load('images/moins-removebg-preview.png').convert_alpha()
+volume_plus_img = pygame.image.load('../../images/plus-removebg-preview.png').convert_alpha()
+volume_minus_img = pygame.image.load('../../images/moins-removebg-preview.png').convert_alpha()
 volume_plus_img = pygame.transform.scale(volume_plus_img, (60, 60))
 volume_minus_img = pygame.transform.scale(volume_minus_img, (80, 80))
 
-quit_img = pygame.image.load('images/croixbienbien.png').convert_alpha()
+quit_img = pygame.image.load('../../images/croixbienbien.png').convert_alpha()
 quit_img = pygame.transform.scale(quit_img, (90, 90))
 
 # Variables globales pour l'état de la musique et le volume

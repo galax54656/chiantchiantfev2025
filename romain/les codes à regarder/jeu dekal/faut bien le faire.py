@@ -5,16 +5,16 @@ pygame.init()
 screen = pygame.display.set_mode((1280, 720))
 pygame.display.set_caption("Jeu Dékal")
 
-game_background = pygame.image.load("images/fonjeumtn.png").convert()
+game_background = pygame.image.load("../../images/fonjeumtn.png").convert()
 game_background = pygame.transform.scale(game_background, (1280, 720))
 
-bouton_img = pygame.image.load('images/FOND BOUTON.png').convert_alpha()
+bouton_img = pygame.image.load('../../images/FOND BOUTON.png').convert_alpha()
 bouton_img = pygame.transform.scale(bouton_img, (380, 100))
-bouton_hover_img = pygame.image.load('images/fond_bouton2.png').convert_alpha()
+bouton_hover_img = pygame.image.load('../../images/fond_bouton2.png').convert_alpha()
 bouton_hover_img = pygame.transform.scale(bouton_hover_img, (380, 100))
 
-card_back_img = pygame.image.load('images/tigre.webp').convert()
-card_face_img = pygame.image.load('images/avantvraicarterouge.png').convert()
+card_back_img = pygame.image.load('../../images/tigre.webp').convert()
+card_face_img = pygame.image.load('../../images/avantvraicarterouge.png').convert()
 
 BLANC = (255, 255, 255)
 NOIR = (0, 0, 0)
